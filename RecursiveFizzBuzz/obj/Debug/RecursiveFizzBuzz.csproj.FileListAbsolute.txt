@@ -9,3 +9,6 @@ C:\Users\amarshall20\Source\Repos\RecursiveFizzBuzz\RecursiveFizzBuzz\obj\Debug\
 C:\Users\amarshall20\Source\Repos\RecursiveFizzBuzz\RecursiveFizzBuzz\bin\Debug\RecursiveFizzBuzz.exe
 C:\Users\amarshall20\Source\Repos\RecursiveFizzBuzz\RecursiveFizzBuzz\bin\Debug\RecursiveFizzBuzz.pdb
 C:\Users\amarshall20\Source\Repos\RecursiveFizzBuzz\RecursiveFizzBuzz\obj\Debug\RecursiveFizzBuzz.csprojResolveAssemblyReference.cache
+C:\Users\amarshall20\Documents\GitHub\RecursiveFizzBuzz\RecursiveFizzBuzz\bin\Debug\RecursiveFizzBuzz.exe.config
+C:\Users\amarshall20\Documents\GitHub\RecursiveFizzBuzz\RecursiveFizzBuzz\obj\Debug\RecursiveFizzBuzz.exe
+C:\Users\amarshall20\Documents\GitHub\RecursiveFizzBuzz\RecursiveFizzBuzz\obj\Debug\RecursiveFizzBuzz.pdb
