@@ -10,96 +10,136 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            LoopingFizzBuzz(15);
-            FizzBuzz(15);
+            Console.WriteLine(LoopingFizzBuzz(15));
+            //need to provide string to concatenate it recursively
+            string fizzBuzz = "";
+            Console.WriteLine(RecursiveFizzBuzz(fizzBuzz, 15));
             //need to provide beginning and end to go up and down recursively
-            UpAndDownFizzBuzz(0, 15);
+            Console.WriteLine(UpAndDownFizzBuzz(fizzBuzz, 1, 15));
             Console.ReadLine();
         }
-        static void LoopingFizzBuzz(int n)
+        static string LoopingFizzBuzz(int n)
         {
+            string fizzBuzz = "";
             while (n > 0)
             {
                 if (n % 3 == 0)
                 {
                     if (n % 5 == 0)
-                        Console.WriteLine("FizzBuzz");
+                        fizzBuzz += "FizzBuzz\n";
                     else
-                        Console.WriteLine("Fizz");
+                        fizzBuzz += "Fizz\n";
                 }
                 else
                 {
                     if (n % 5 == 0)
-                        Console.WriteLine("Buzz");
+                        fizzBuzz += "Buzz\n";
                     else
-                        Console.WriteLine(n);
+                        fizzBuzz += n + "\n";
                 }
                 n--;
             }
+            return fizzBuzz.TrimEnd('\n');
         }
-        static void FizzBuzz(int n)
+        static string RecursiveFizzBuzz(string fizzBuzz, int n)
         {
-            if (n != 0)
+            if (n > 0)
             {
                 if (n % 3 == 0)
                 {
                     if (n % 5 == 0)
-                        Console.WriteLine("FizzBuzz");
+                    {
+                        fizzBuzz += "FizzBuzz\n";
+                        return RecursiveFizzBuzz(fizzBuzz, n-1);
+                    }
                     else
-                        Console.WriteLine("Fizz");
+                    {
+                        fizzBuzz += "Fizz\n";
+                        return RecursiveFizzBuzz(fizzBuzz, n-1);
+                    }
                 }
                 else
                 {
                     if (n % 5 == 0)
-                        Console.WriteLine("Buzz");
+                    {
+                        fizzBuzz += "Buzz\n";
+                        return RecursiveFizzBuzz(fizzBuzz, n-1);
+                    }
+
                     else
-                        Console.WriteLine(n);
+                    {
+                        fizzBuzz += n + "\n";
+                        return RecursiveFizzBuzz(fizzBuzz, n-1);
+                    }
                 }
-                FizzBuzz(n - 1);
+            }else
+            {
+                return fizzBuzz.TrimEnd('\n');
             }
         }
-        static void UpAndDownFizzBuzz(int begin, int end)
+        static string UpAndDownFizzBuzz(string fizzBuzz, int begin, int end)
         {
             if (begin <= end)
             {
-                if (begin != 0)
+                if (begin % 3 == 0)
                 {
-                    if (begin % 3 == 0)
+                    if (begin % 5 == 0)
                     {
-                        if (begin % 5 == 0)
-                            Console.WriteLine("FizzBuzz");
-                        else
-                            Console.WriteLine("Fizz");
+                        fizzBuzz += "FizzBuzz\n";
+                        return UpAndDownFizzBuzz(fizzBuzz, begin + 1, end);
                     }
                     else
                     {
-                        if (begin % 5 == 0)
-                            Console.WriteLine("Buzz");
-                        else
-                            Console.WriteLine(begin);
+                        fizzBuzz += "Fizz\n";
+                        return UpAndDownFizzBuzz(fizzBuzz, begin + 1, end);
                     }
                 }
-                UpAndDownFizzBuzz(begin + 1, end);
+                else
+                {
+                    if (begin % 5 == 0)
+                    {
+                        fizzBuzz += "Buzz\n";
+                        return UpAndDownFizzBuzz(fizzBuzz, begin + 1, end);
+                    }
+                    else{
+                        fizzBuzz += begin + "\n";
+                        return UpAndDownFizzBuzz(fizzBuzz, begin + 1, end);
+                    }
+                }
             }
             else
             {
-                if (end != 0)
+                if (end > 0)
                 {
                     if (end % 3 == 0)
                     {
                         if (end % 5 == 0)
-                            Console.WriteLine("FizzBuzz");
+                        {
+                            fizzBuzz += "FizzBuzz\n";
+                            return UpAndDownFizzBuzz(fizzBuzz, begin, end - 1);
+                        }
                         else
-                            Console.WriteLine("Fizz");
+                        {
+                            fizzBuzz += "Fizz\n";
+                            return UpAndDownFizzBuzz(fizzBuzz, begin, end - 1);
+                        }
                     }
                     else
                     {
                         if (end % 5 == 0)
-                            Console.WriteLine("Buzz");
+                        {
+                            fizzBuzz += "Buzz\n";
+                            return UpAndDownFizzBuzz(fizzBuzz, begin, end - 1);
+                        }
                         else
-                            Console.WriteLine(end);
+                        {
+                            fizzBuzz += end + "\n";
+                            return UpAndDownFizzBuzz(fizzBuzz, begin, end - 1);
+                        }
                     }
-                    UpAndDownFizzBuzz(begin, end - 1);
+                }else
+                {
+                    return fizzBuzz.TrimEnd('\n');
                 }
             }
         }
