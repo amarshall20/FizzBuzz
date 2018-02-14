@@ -32,7 +32,8 @@ namespace FizzBuzz
                 fizzBuzz += FizzBuzz(n) + DownUpRecursive(n - 1);
                 return fizzBuzz + FizzBuzz(n);
             }
-            return n.ToString() + "\n";
+            else
+                return n.ToString() + "\n";
         }
         static string FizzBuzz(int n)
         {
